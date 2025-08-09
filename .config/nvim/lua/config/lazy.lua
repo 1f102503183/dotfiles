@@ -26,9 +26,25 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     -- import your plugins
-    { import = "plugins.lsp" },
+-- LSP keymaps
+{
+  "neovim/nvim-lspconfig",
+  opts = function()
+    local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- change a keymap
+    keys[#keys + 1] = { "K", "<cmd>echo 'hello'<cr>" }
+    -- disable a keymap
+    keys[#keys + 1] = { "K", false }
+    -- add a keymap
+    keys[#keys + 1] = { "H", "<cmd>echo 'hello'<cr>" }
+  end,
+},
+    --dirキーを使ってプラグインのパスを指定する
+    {
+	dir = vim.fn.stdpath("config") .. "/lua/local_plugins/brackets_closer",
+    },
   },
-  -- Configure any other settings here. See the documentation for more details.
+
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates

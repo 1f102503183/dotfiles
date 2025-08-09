@@ -1,3 +1,2 @@
-require("config.lazy")
 require("core.myoption")
-
+require("config.lazy")

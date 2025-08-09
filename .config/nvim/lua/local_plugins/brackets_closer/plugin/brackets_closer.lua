@@ -13,4 +13,4 @@ vim.api.nvim_create_autocmd("InsertChatPre",{
 			vim.api.nvim_set_text( 0, 0, col, 0, col, {")"})
 		end
 	end
-}
+})
