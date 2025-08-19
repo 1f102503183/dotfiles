@@ -17,6 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { dir = vim.fn.stdpath("config") .. "/lua/local_plugins/brackets_closer/plugin" },
   },
 })
