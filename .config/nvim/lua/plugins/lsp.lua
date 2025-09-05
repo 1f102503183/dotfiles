@@ -19,6 +19,15 @@ return {
                     package_uninstalled = "✗"
                 }
             }
+            ensure_installed = {
+                "lua_ls",
+                "rust-analyzer",
+                "pyright",
+                "typescript-language-server",
+                "jdtls",
+                "html",
+                "cssls",
+            }
         })
 
         -- ステップ2: 次にmason-lspconfig.nvimをセットアップする
@@ -42,6 +51,9 @@ return {
         -- 各言語のLSPサーバーを有効化
         lspconfig.rust_analyzer.setup({ on_attach = on_attach })
         lspconfig.pyright.setup({ on_attach = on_attach })
-        lspconfig.tsserver.setup({ on_attach = on_attach })
+        lspconfig.ts_ls.setup({ on_attach = on_attach })
         lspconfig.lua_ls.setup({ on_attach = on_attach })
-    end, }
+        lspconfig.html.setup({ on_attach = on_attach })
+        lspconfig.cssls.setup({ on_attach = on_attach })
+    end,
+}
