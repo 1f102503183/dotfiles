@@ -18,7 +18,7 @@ return {
                     package_pending = "➜",
                     package_uninstalled = "✗"
                 }
-            }
+            },
             ensure_installed = {
                 "lua_ls",
                 "rust-analyzer",
@@ -33,10 +33,10 @@ return {
         -- ステップ2: 次にmason-lspconfig.nvimをセットアップする
         require("mason-lspconfig").setup()
 
-        -- LSP設定の共通部分を定義
+        -- LSP設定の共通部分を定義 
         local lspconfig = require("lspconfig")
         local on_attach = function(client, bufnr)
-            -- フォーマット機能
+            -- Formatting Autocommand (already there)
             if client.supports_method("textDocument/formatting") then
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     group = vim.api.nvim_create_augroup("LspFormatting", {}),
@@ -46,6 +46,21 @@ return {
                     end,
                 })
             end
+
+            -- Keymaps for LSP functionality
+            local opts = { noremap = true, silent = true, buffer = bufnr }
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)          -- Go to Definition
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)                -- Show documentation
+            vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, opts) -- Code Actions
+
+            -- Diagnostics (real-time error display)
+            -- This sets up the visual cues for errors and warnings
+            vim.diagnostic.config({
+                signs = true,
+                virtual_text = true,
+                underline = true,
+                update_in_insert = false,
+                }, bufnr)
         end
 
         -- 各言語のLSPサーバーを有効化
