@@ -23,10 +23,11 @@ return {
                 "lua_ls",
                 "rust-analyzer",
                 "pyright",
-                "typescript-language-server",
+                -- "typescript-language-server",
                 "jdtls",
                 "html",
                 "cssls",
+                "prettier",
             }
         })
 
