@@ -34,7 +34,7 @@ return {
         -- ステップ2: 次にmason-lspconfig.nvimをセットアップする
         require("mason-lspconfig").setup()
 
-        -- LSP設定の共通部分を定義 
+        -- LSP設定の共通部分を定義
         local lspconfig = require("lspconfig")
         local on_attach = function(client, bufnr)
             -- Formatting Autocommand (already there)
@@ -61,7 +61,7 @@ return {
                 virtual_text = true,
                 underline = true,
                 update_in_insert = false,
-                }, bufnr)
+            }, bufnr)
         end
 
         -- 各言語のLSPサーバーを有効化
