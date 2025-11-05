@@ -1,1 +1,4 @@
 theme = "tokyonight_moon"
+#  ポップアップが表示されるまでの時間
+[editor]
+idle-timeout = 0

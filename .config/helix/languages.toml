@@ -23,3 +23,7 @@ language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
 ]
+
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" , args = ["+nightly"] }
