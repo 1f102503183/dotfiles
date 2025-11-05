@@ -24,6 +24,3 @@ language-servers = [
   "vscode-eslint-language-server",
 ]
 
-[[language]]
-name = "rust"
-formatter = { command = "rustfmt" , args = ["+nightly"] }
