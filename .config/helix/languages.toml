@@ -23,3 +23,11 @@ language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
 ]
+
+[[language]]
+name = "python"
+# LSPサーバーとして 'pylsp' を使用するように指定します
+language-servers = [ "pylsp" ]
+# 自動フォーマットを設定する場合（例: Blackがインストールされている前提）
+auto-format = true
+formatter = { command = "black", args = ["--quiet", "-"] }

@@ -1,1 +1,3 @@
 theme = "tokyonight_moon"
+[editor]
+idle-timeout = 0
