@@ -2,9 +2,11 @@ theme = "tokyonight_moon"
 [editor]
 cursorline = true
 bufferline = "always"
+color-modes = true
 
 [editor.lsp]
-display-massages = false
+display-inlay-hints = true
+# display-massages = false
 
 [keys.insert]
 j = { k = "normal_mode" }
