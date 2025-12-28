@@ -1,12 +1,17 @@
 theme = "tokyonight_moon"
 [editor]
+mouse = false
 cursorline = true
+cursorcolumn = true
+default-line-ending = "lf"
+continue-comments = false
 bufferline = "always"
 color-modes = true
+popup-border = "all"
 
 [editor.lsp]
-display-inlay-hints = true
-# display-massages = false
+display-messages = false
+display-progress-messages = true
 
 [keys.insert]
 j = { k = "normal_mode" }
