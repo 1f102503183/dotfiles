@@ -1,4 +1,4 @@
-theme = "dark_high_contrast"
+theme = "tokyonight_moon"
 [editor]
 mouse = false
 cursorline = true
